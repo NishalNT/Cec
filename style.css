@@ -451,11 +451,6 @@ marquee{
   color: #fff;
 }
 
-/* .active {
-  background-color: rgb(34, 49, 63);
-  color: #fff;
-} */
-
 .nav-home .nav-right .sub-menu a{
   font-size: 13px;
   color: #000;
@@ -1217,33 +1212,53 @@ hr {
 
   .nav-home ul {
     position: fixed;
-    right: 0;
-    top: 0;
-    width: 320px;
-    background-color: rgb(34, 49, 63);
-    height: 100%;
-    z-index: 1000;
+    top: -100%;
+    left: 0;
+    /* background-color: #22313f; */
+    background-color: #f6f6f2;
+    /* background-color: #182b3a;
+    background-image: linear-gradient(315deg, #182b3a 0%, #20a4f3 74%); */
+    height: 100vh;
+    z-index: 101;
+    padding-top: 18px;
+    width: 100%;
     display: block;
+    border-bottom-left-radius: 12%;
+    border-bottom-right-radius: 12%;
+    text-align: center;
+    transition: all 1s ease-in-out;
   }
-  .nav-home ul li{
-    margin-top: 50px;
-  }
-  .nav-home ul .close-menu-btn{
-    height: 35px;
-    width: 35px;
-    position: relative;
-    display: inline-flex;
-  }
-
-  .nav-home ul .close-menu-btn::before,
-  .nav-home ul .close-menu-btn::after{
-    content: '';
-    position: absolute;
-    width: 80%;
-    height: 2px;
-    background-color: #fff;
+  .nav-home ul li a {
+    color: #000;
   }
   
+  #click:checked~.hamburger i::before {
+    content: "\f00d";
+    color: #000;
+    
+    position: fixed;
+    top: 60px;
+    z-index: 100;
+    transition: all 1s ease-in-out;
+  }
+
+  #click:checked~ul {
+    top: 0px;
+  }
+
+  .nav-home ul li {
+    margin: 40px 0;
+  }
+
+  .nav-home ul li a {
+    font-size: 20px;
+  }
+
+
+  .nav-home .hamburger i {
+    display: block;
+    z-index: 103;
+  }
 
 }
 
