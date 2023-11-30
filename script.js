@@ -197,3 +197,42 @@ $('.sub-menu a').on('click', function () {
   // Add 'active' class to the clicked submenu item
   $(this).addClass('active');
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.getElementById('click');
+  const navUl = document.querySelector('.nav-home ul');
+  const hamburgerIcon = document.querySelector('.hamburger i');
+  const navUlItems = document.querySelectorAll('.nav-home ul li');
+  const dropdown = document.querySelector('.dropdown a');
+
+  checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+          navUl.classList.add('active');
+      } else {
+          navUl.classList.remove('active');
+      }
+  });
+
+  // Close the menu when clicking on any .nav-home ul li item
+  navUlItems.forEach(item => {
+      item.addEventListener('click', function () {
+          navUl.classList.remove('active');
+          checkbox.checked = false;
+      });
+  });
+
+  // Exclude .nav-home .nav-right .dropdown from closing the menu
+  dropdown.addEventListener('click', function (event) {
+      event.stopPropagation();
+  });
+});
+
+$(document).ready(function(){
+  $(".tabs-btn").click(function(){
+    $("#nav-tabs-wrapper").slideToggle();
+  });
+});
+
+
+

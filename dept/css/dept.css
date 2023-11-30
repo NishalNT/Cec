@@ -13,13 +13,21 @@
 
 html,
 body {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   overflow-x: hidden;
   background-color: #f6f6f2;
   /* background-color: #22313f; */
   width: fit-content;
 }
+
+
+/* body{
+  overflow: auto;
+  /* width: 100vw; */
+  /* height: 100vh; */
+} */
+
 .brown {
   width: 100%;
   background-color: brown;
@@ -401,13 +409,14 @@ p {
 }
 
 .firstthinginhome {
-  width: 100vw;
+  width: 100%;
   display: flex;
-  background-color: #22313f;
   flex-direction: column;
+  background-color: #22313f;
   justify-content: space-between;
   align-items: center;
 }
+
 
 .home {
   background-color: #f6f6f2;
@@ -593,7 +602,8 @@ hr {
     flex-direction: column;
   }
   .sidebar {
-    display: none;
+    display: block;
+    height: 300px;
   }
 }
 
@@ -620,38 +630,57 @@ hr {
 @media (max-width: 1315px) {
   .nav-home ul {
     position: fixed;
-    top: -100%;
-    left: 0;
-    /* background-color: #22313f; */
-    background-color: #f6f6f2;
-    /* background-color: #182b3a;
-    background-image: linear-gradient(315deg, #182b3a 0%, #20a4f3 74%); */
-    height: 100vh;
-    z-index: 101;
+    right: 0;
+    top: 0;
+    background-color: rgb(34, 49, 63);
+    height: 100%;
+    z-index: 1010;
     padding-top: 18px;
-    width: 100%;
-    display: block;
-    border-bottom-left-radius: 12%;
-    border-bottom-right-radius: 12%;
+    width: 320px;
+    display: none;
     text-align: center;
     transition: all 1s ease-in-out;
   }
+
+  .nav-home ul.active{
+    display: block;
+    padding: 0;
+  }
+
+  .nav-home .nav-right .sub-menu{
+    right: 0;
+    top: 60px;
+    height: 600px;
+    position: fixed;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+    left: 0;
+    width: 320px;
+    z-index: 101;
+  }
+  .nav-home .nav-right .sub-menu li{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
   .nav-home ul li a {
-    color: #000;
+    color: #fff;
+  }
+
+  #click:checked ~ .nav-home ul {
+    top: 0px;
   }
 
   #click:checked ~ .hamburger i::before {
     content: "\f00d";
     color: #000;
-
     position: fixed;
-    top: 60px;
+    top: 60px; /* Adjust this value as needed */
     z-index: 100;
     transition: all 1s ease-in-out;
-  }
-
-  #click:checked ~ ul {
-    top: 0px;
   }
 
   .nav-home ul li {
@@ -665,6 +694,14 @@ hr {
   .nav-home .hamburger i {
     display: block;
     z-index: 103;
+  }
+  .nav-home .nav-right .down {
+    color: #fff;
+    margin-right: 10px;
+    position: relative;
+  }
+  .nav-home ul li a:hover, .nav-home ul .dropdown > i:hover {
+    color: #fff;
   }
 }
 
@@ -891,6 +928,9 @@ hr {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     text-align: center;
+    width: 60%;
+    position: relative;
+    margin: 0 auto;
   }
 }
 /*=========================  Vtab3 ====================*/
@@ -1052,6 +1092,12 @@ background-size:contain;
 }
 .card-date{
 	color: white;
+}
+
+.btn-block{
+  width: 60% !important;
+  position: relative;
+  margin: 0 auto !important;
 }
 
 .btn1{
@@ -1234,7 +1280,7 @@ color:white;
   text-transform: capitalize;
 }
 
-.nav-home .nav-right i{
+.nav-home .nav-right .down{
   font-size: 15px;
   pointer-events: none;
   margin-left: 8px;
@@ -1244,6 +1290,10 @@ color:white;
   top: calc(50% - 5px);
 }
 
+.nav-home .nav-right i{
+  font-size: 20px;
+}
+
 .nav-home .nav-right > .nav-ul > li > i{
   right: 0;
 }
@@ -1251,4 +1301,269 @@ color:white;
 .content-side{
   line-height: 1.8;
 }
+
+/* Add a meta tag to ensure proper rendering on mobile devices */
+meta {
+  viewport-fit=cover;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .show-modal {
+    top: 70%;
+  }
+
+  .close-modal {
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .sidebar {
+    top: 12rem;
+    width: 100%;
+    left: 0;
+  }
+
+  .sidebar ul li a {
+    padding-left: 15%;
+  }
+
+  .nav-home {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #nav-left {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .nav-info {
+    margin-top: 10px;
+  }
+
+  .nav-home ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-right {
+    min-width: 100%;
+    justify-content: start;
+  }
+
+  .nav-home ul li {
+    margin: 0;
+  }
+
+  .nav-home .hamburger {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .nav-home .hamburger i {
+    display: block;
+  }
+
+  .card h1 {
+    font-size: 20px;
+  }
+
+  #heading {
+    top: 20%;
+    left: 10px;
+  }
+
+ 
+
+  #footer {
+    padding: 1.2rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .last {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .dept {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .dept ul {
+    align-items: center;
+  }
+
+  .logo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo img {
+    margin-bottom: 10px;
+  }
+
+  .data-box {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    width: auto;
+    background-color: #3639462e;
+    text-align: left;
+  }
+
+  .submenu li a {
+    font-size: 14px;
+  }
+
+  .decorative-title span {
+    font-size: 1.8rem;
+  }
+
+  .cardcol {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .boxfooter {
+    flex-direction: column;
+  }
+
+  .nav-tabs-dropdown {
+    margin-left: 0;
+  }
+
+  .nav-home .nav-right .dropdown a {
+    padding-right: 0;
+  }
+
+  .nav-home .nav-right .sub-menu {
+    width: 100%;
+  }
+}
+
+/* Adjustments for even smaller screens */
+@media screen and (max-width: 425px) {
+  .topmost {
+    font-size: 14px !important;
+    margin: 8px !important;
+  }
+
+  .topmost img {
+    width: 16px !important;
+    height: 20px;
+  }
+
+  .topmost #call {
+    margin-left: 10px;
+  }
+
+  .topmost p {
+    margin-left: 8px;
+  }
+
+  .show-modal {
+    left: -50px;
+  }
+
+  .modal {
+    padding: 1rem;
+  }
+
+  .sidebar {
+    width: 80px;
+  }
+
+  .sidebar li a {
+    padding-left: 10%;
+  }
+
+  .nav-info {
+    margin-top: 5px;
+  }
+
+  .nav-home ul li a {
+    font-size: 18px;
+  }
+
+  .nav-home .hamburger i {
+    font-size: 1.8rem;
+  }
+
+  .nav-ul li a span {
+    display: none;
+  }
+
+  .data-box {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .nav-home .hamburger i:hover {
+    font-size: 1.9rem;
+  }
+
+  .nav-tabs-dropdown {
+    margin-left: 25px;
+  }
+
+  .decorative-title span {
+    font-size: 2rem;
+  }
+
+  .cardcol {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    height: auto;
+    line-height: 1.5;
+  }
+
+  .card-text {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .card-date {
+    font-size: 14px;
+  }
+
+  .btn1, .btn11 {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #assign {
+    font-size: 14px;
+    padding: 8px 8px;
+  }
+
+  .nav-home .nav-right .down {
+    font-size: 14px;
+  }
+
 
