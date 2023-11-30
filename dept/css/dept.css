@@ -10,15 +10,14 @@
 }
 
 
-
-html,
-body {
-  height: 100%;
+html,body {
   width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
   overflow-x: hidden;
   background-color: #f6f6f2;
-  /* background-color: #22313f; */
-  width: fit-content;
+  /* width: fit-content; */
 }
 
 
@@ -513,7 +512,7 @@ p {
 
 #mainfoot ul li a {
   text-decoration: none;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   display: flex;
   align-items: center;
   gap: 7px;
@@ -601,10 +600,6 @@ hr {
   .data {
     flex-direction: column;
   }
-  .sidebar {
-    display: block;
-    height: 300px;
-  }
 }
 
 @media (max-width: 95em) {
@@ -622,9 +617,9 @@ hr {
   .nav-btn {
     display: none;
   }
-  .sidebar {
+  /* .sidebar {
     display: none;
-  }
+  } */
 }
 
 @media (max-width: 1315px) {
@@ -650,21 +645,20 @@ hr {
   .nav-home .nav-right .sub-menu{
     right: 0;
     top: 60px;
-    height: 600px;
-    position: fixed;
+    height: auto;
+    position: relative;
     padding-top: 5px;
     padding-bottom: 5px;
     display: block;
-    left: 0;
     width: 320px;
     z-index: 101;
   }
-  .nav-home .nav-right .sub-menu li{
+  .nav-home .nav-right .sub-menu li {
     display: flex;
     justify-content: center;
-    position: relative;
-    padding: 0;
-    margin: 0;
+    align-items: center;
+    padding: 10px 0 0 0 ; /* Adjust the padding as needed */
+    margin: 0; /* Reset margin to remove any default spacing */
   }
   .nav-home ul li a {
     color: #fff;
@@ -1232,7 +1226,7 @@ color:white;
   padding: 15px 0;
   background-color: #fff;
   z-index: 1;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   transform-origin: top;
   transform: scaleY(0);
@@ -1501,6 +1495,7 @@ meta {
 
   .nav-home ul li a {
     font-size: 18px;
+    padding: 10px 0;
   }
 
   .nav-home .hamburger i {
@@ -1565,5 +1560,17 @@ meta {
   .nav-home .nav-right .down {
     font-size: 14px;
   }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-footer .footer-item {
+    margin-bottom: 10px; 
+  }
+}
 
 
