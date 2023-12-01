@@ -429,7 +429,6 @@ p {
 #footer {
   display: flex;
   flex-direction: column;
-  bottom: 0;
   padding-bottom: 1.2rem;
   padding-top: 2rem;
   padding-left: 3rem;
@@ -447,6 +446,26 @@ p {
   column-gap: 1%;
   transition: all ease 1s;
   padding: 0.5rem 1rem;
+  overflow-x: auto; /* Add horizontal scrollbar on smaller screens */
+  /* white-space: nowrap; */
+}
+
+.dept-foot {
+  margin-bottom: 1.5rem; /* Add some margin between each dept-foot for better spacing */
+
+  /* Additional styles for better readability on small screens */
+  text-align: center;
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+  #mainfoot {
+    grid-template-columns: 1fr; /* Set to 1 column for mobile view */
+  }
+
+  .dept-foot {
+    margin-bottom: 1.5rem; /* You can adjust the margin as needed */
+  }
 }
 
 @media (max-width: 426px) {
@@ -462,7 +481,7 @@ p {
   background-color: #f2f2f2;
 }
 
-.dept {
+.dept-foot {
   display: flex;
   flex-direction: column;
   padding: 0.8rem 0.9rem;
@@ -472,12 +491,12 @@ p {
   border-radius: 12px;
 }
 
-.dept ul {
+.dept-foot ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.dept strong {
+.dept-foot strong {
   font-size: 1.4rem;
   letter-spacing: 2px;
   color: #000;
@@ -650,7 +669,7 @@ hr {
     padding-top: 5px;
     padding-bottom: 5px;
     display: block;
-    width: 320px;
+    width: 100%;
     z-index: 101;
   }
   .nav-home .nav-right .sub-menu li {
@@ -711,57 +730,7 @@ hr {
   transition: 0.3s;
 }
 
-/* <=========================== Submenu ==============================> */
-/* .submenu {
-  position: absolute;
-  width: 370px;
-  background-color: #fff;
-  display: none;
-  flex-direction: column;
-  margin: 5px 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  transition: all ease 0.5s;
-} */
 
-.submenu li a {
-  font-size: 15px;
-  display: flex;
-  text-align: left;
-  justify-content: left;
-  margin-bottom: 8px;
-  text-transform: capitalize;
-}
-
-.nav-home ul li .submenu a {
-  color: #000;
-  font-size: 15px;
-  display: flex;
-  justify-content: start;
-}
-
-.submenu li {
-  margin: 0;
-}
-
-.nav-home ul li .submenu a:hover {
-  background-color: rgb(34, 49, 63);
-  color: white;
-  padding: 5px;
-  transition: 0.5s all ease;
-}
-/* <=========================== Submenu hover ==============================> */
-.nav-home ul .department:hover .submenu {
-  z-index: 999;
-  opacity: 1;
-}
-
-.nav-home ul li .submenu a.active-submenu-item {
-  background-color: rgb(34, 49, 63);
-  color: white;
-  padding: 5px;
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
 
 /* <========================Dept Css =============================> */
 
@@ -1226,13 +1195,15 @@ color:white;
   padding: 15px 0;
   background-color: #fff;
   z-index: 1;
-  /* display: flex; */
   flex-direction: column;
   transform-origin: top;
   transform: scaleY(0);
   visibility: hidden;
   opacity: 0;
 }
+
+
+
 
 .h1, .h2, .h3, h1, h2, h3 {
   margin-top: 10px !important;
@@ -1298,7 +1269,7 @@ color:white;
 
 /* Add a meta tag to ensure proper rendering on mobile devices */
 meta {
-  viewport-fit=cover;
+  viewport-fit: cover;
 }
 
 /* Adjustments for smaller screens */
@@ -1394,11 +1365,11 @@ meta {
     padding-right: 1rem;
   }
 
-  .dept {
+  .dept-foot {
     padding: 0.8rem 0.9rem;
   }
 
-  .dept ul {
+  .dept-foot ul {
     align-items: center;
   }
 
@@ -1423,7 +1394,7 @@ meta {
     text-align: left;
   }
 
-  .submenu li a {
+  .sub-menu li a {
     font-size: 14px;
   }
 
@@ -1570,6 +1541,33 @@ meta {
   }
   .main-footer .footer-item {
     margin-bottom: 10px; 
+  }
+}
+
+/* Adjustments for even smaller screens */
+@media screen and (max-width: 425px) and (min-width: 200px) {
+  /* ... other styles ... */
+
+  .nav-home .nav-right li:hover > .sub-menu {
+    display: block;
+    visibility: visible;
+    transition: all 0.5s ease;
+  }
+
+  .nav-home .nav-right .sub-menu {
+    width: 100%;
+    display: none; /* initially hide the submenu */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+  }
+
+  .nav-home .nav-right .sub-menu li {
+    display: block;
+    padding: 10px 0;
+    margin: 0;
   }
 }
 
