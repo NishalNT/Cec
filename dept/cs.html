@@ -1533,7 +1533,17 @@
                 dropdown.addEventListener('click', function (event) {
                     event.stopPropagation();
                 });
+
+                // Close the menu when clicking outside .nav-home
+                document.addEventListener('click', function (event) {
+                    const target = event.target;
+                    if (!target.closest('.nav-home')) {
+                        navUl.classList.remove('active');
+                        checkbox.checked = false;
+                    }
+                });
             });
+
         </script>
         <script>
             $(document).ready(function () {
