@@ -546,6 +546,45 @@
         </footer>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkbox = document.getElementById('click');
+            const navUl = document.querySelector('.nav-home ul');
+            const hamburgerIcon = document.querySelector('.hamburger i');
+            const navUlItems = document.querySelectorAll('.nav-home ul li');
+            const dropdown = document.querySelector('.dropdown a');
+
+            checkbox.addEventListener('change', function () {
+                if (checkbox.checked) {
+                    navUl.classList.add('active');
+                } else {
+                    navUl.classList.remove('active');
+                }
+            });
+
+            // Close the menu when clicking on any .nav-home ul li item
+            navUlItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    navUl.classList.remove('active');
+                    checkbox.checked = false;
+                });
+            });
+
+            // Exclude .nav-home .nav-right .dropdown from closing the menu
+            dropdown.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+
+            // Close the menu when clicking outside .nav-home
+            document.addEventListener('click', function (event) {
+                const target = event.target;
+                if (!target.closest('.nav-home')) {
+                    navUl.classList.remove('active');
+                    checkbox.checked = false;
+                }
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://kit.fontawesome.com/1373b730aa.js" crossorigin="anonymous"></script>
