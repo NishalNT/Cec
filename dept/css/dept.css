@@ -762,24 +762,32 @@ hr {
   /* padding-left: 100px;
   padding-right: 100px; */
 }
+
 .decorative-title {
   position: relative;
   width: 100%;
   margin: 0 auto;
 }
+
 .decorative-title span {
   display: block;
   padding: 1rem 0.5rem 1rem;
-  background-color: #25262b;
+  background: linear-gradient(90deg, #25262b, #1a1a1f); /* Gradient background */
   color: #ffffff;
-
   text-align: center;
-  font: 2rem montserrat, sans-seriff;
+  font: 2rem Montserrat, sans-serif;
   font-weight: 900;
   letter-spacing: 0.3rem;
   margin-top: 40px;
   margin-bottom: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Box shadow */
+  transition: background 0.3s ease; /* Smooth background transition */
 }
+
+.decorative-title span:hover {
+  background: linear-gradient(90deg, #1a1a1f, #25262b); /* Gradient background on hover */
+}
+
 @media (min-width: 576px) {
   .decorative-title {
     width: 100%;
@@ -788,44 +796,56 @@ hr {
     font-size: 2.3rem;
   }
 }
+
 .decorative-bar {
   position: absolute;
   background-color: #000000;
 }
+
 .left.thick {
   left: -20px;
 }
+
 .left.thin {
   right: 0;
 }
+
 .left.vertical,
 .left.horizontal.thick {
   top: -20px;
 }
+
 .left.horizontal.thin {
   top: -16px;
 }
+
 .right.thick {
   right: -20px;
 }
+
 .right.thin {
   left: 0;
 }
+
 .right.vertical,
 .right.horizontal.thick {
   bottom: -20px;
 }
+
 .right.horizontal.thin {
   bottom: -16px;
 }
+
 .vertical {
   width: 13px;
   height: 80px;
 }
+
 .horizontal.thick {
   width: 30%;
   height: 13px;
 }
+
 .horizontal.thin {
   width: 80%;
   height: 5px;
@@ -1571,4 +1591,70 @@ meta {
   }
 }
 
+/* ////////////////////////// NEW CODES ADDED HERE /////////////////////////////// */
 
+/* .image-body {
+  width: 100vw;
+  height: 50vh;
+  z-index: 5;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.image-body{
+  width: 100vw;
+  height: 50vh;
+  background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8fHww');
+}
+
+.image-body{
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8fHww');
+  background-size: 100% 100%;
+  animation: changeImage 20s linear infinite;
+}
+
+@keyframes changeImage{
+  0%{
+    background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8fHww');
+  }
+  25%{
+    background-image: url('https://www.canaraengineering.in/departments/cse/labpics/Advanced%20computing%20lab.jpg');
+  }
+  50%{
+    background-image: url('https://media.istockphoto.com/id/537331500/photo/programming-code-abstract-technology-background-of-software-deve.webp?b=1&s=170667a&w=0&k=20&c=iQE4in2blXsYoRYjoX7F8e4AFF6kOaE-TZiVNMPQ5kI=');
+  }
+  75%{
+    background-image: url('https://plus.unsplash.com/premium_photo-1682140993556-f263e434000b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29kaW5nfGVufDB8fDB8fHww');
+  }
+  100%{
+    background-image: url('https://plus.unsplash.com/premium_photo-1682140999442-e9e2a5f55be6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNvZGluZ3xlbnwwfHwwfHx8MA%3D%3D');
+  }
+}
+
+.image-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: brightness(70%); /* Adjust the brightness as needed */
+}
+
+.image-body h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  font-weight: 700 !important;
+  font-size: 60px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glow effect */
+}
