@@ -1493,10 +1493,6 @@ meta {
     font-size: 1.8rem;
   }
 
-  .nav-ul li a span {
-    display: none;
-  }
-
   .data-box {
     width: 100%;
     padding: 1rem;
@@ -1565,7 +1561,7 @@ meta {
 }
 
 /* Adjustments for even smaller screens */
-@media screen and (max-width: 425px) and (min-width: 200px) {
+@media screen and (max-width: 425px) {
   /* ... other styles ... */
 
   .nav-home .nav-right li:hover > .sub-menu {
@@ -1585,8 +1581,7 @@ meta {
   }
 
   .nav-home .nav-right .sub-menu li {
-    display: block;
-    padding: 10px 0;
+    padding: 5px 0;
     margin: 0;
   }
 }
