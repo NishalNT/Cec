@@ -1849,17 +1849,10 @@ meta {
 
   .dept-container {
     padding: 20px; /* Adjust padding for smaller screens */
-  }
-
-  .dept-container img {
-    max-width: 100%;
-    height: auto;
-  }
   
-  #footer {
-    margin-top: 10px;
+  .dept-container{
+    padding: 50px;
   }
-} */
 
 
 
