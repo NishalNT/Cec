@@ -1660,14 +1660,16 @@ meta {
   }
 }
 
-.blue-box{
+.blue-box {
   margin: 20px 0;
   background-color: darkblue;
   color: yellow;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .blue-box > .text-box > p,
-.blue-box > .text-box ul li{
+.blue-box > .text-box ul li {
   color: #fff;
 }
 
@@ -1830,7 +1832,34 @@ meta {
   font-size: 20px;
 }
 
+/* .dept-about {
+  min-height: 100vh;
+  overflow: hidden;
+}
 
+.dept-container {
+  height: 100vh;
+  padding: 25px;
+}
+
+@media (max-width: 767px) {
+  .dept-about {
+    padding: 20px;
+  }
+
+  .dept-container {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .dept-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #footer {
+    margin-top: 10px;
+  }
+} */
 
 
 
