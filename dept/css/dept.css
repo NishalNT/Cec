@@ -1659,3 +1659,181 @@ meta {
     font-size: 40px;
   }
 }
+
+.blue-box{
+  margin: 20px 0;
+  background-color: darkblue;
+  color: yellow;
+}
+
+.blue-box > .text-box > p,
+.blue-box > .text-box ul li{
+  color: #fff;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 0;
+  overflow-x: hidden;
+}
+
+.department-heading {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  margin-bottom: 20px;
+  text-decoration-color: blue;
+}
+
+.nav-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Add a common class for the overlay styling */
+.nav-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Ensure the overlay takes the full width of its parent */
+  height: 100%; /* Ensure the overlay takes the full height of its parent */
+  transition: transform 0.3s ease-out; /* Add a smooth transition effect */
+}
+
+.nav:hover .nav-overlay {
+  transform: scale(1.1); /* Enlarge the overlay on hover */
+}
+
+/* Modify the existing styles for .nav and .nav::before */
+.nav {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Apply different background images and overlay colors for each box */
+.nav.box1 {
+  background-image: url('https://media.istockphoto.com/id/1434742171/photo/laptop-ppt-presentation-business-meeting-and-team-working-on-review-for-new-digital-website.webp?b=1&s=170667a&w=0&k=20&c=CTuv0GsOQhhXBx7nhCghIaadrbJS9bpTdIn7zHi8xOo=');
+}
+
+.nav.box1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: rgba(255, 0, 0, 0.5); /* Red overlay */
+}
+
+.nav.box2 {
+  background-image: url('https://media.istockphoto.com/id/1134390236/photo/business-colleagues-discussing-a-project.webp?b=1&s=170667a&w=0&k=20&c=lX60J3DvEZgfTRoE29RInPI-ubX7v8JcOUhNNx3sZtw=');
+}
+
+.nav.box2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: rgba(0, 128, 0, 0.5); /* Green overlay */
+}
+
+.nav.box3 {
+  background-image: url('https://media.istockphoto.com/id/523475106/photo/modern-office-blur.webp?b=1&s=170667a&w=0&k=20&c=vgiTEByQiAGdgYkB7QYEKIkfAGdPGiH5CsKPk9nufVE=');
+}
+
+.nav.box3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 255, 0.5); /* Blue overlay */
+}
+
+.nav.box4 {
+  background-image: url('https://media.istockphoto.com/id/1350828578/photo/two-happy-businesswomen-discussing-at-office.webp?b=1&s=170667a&w=0&k=20&c=4K4nIRtDV6FZHKOetIc-Fam9MW_rFL8mSlBHG_Hvr8w=');
+}
+
+.nav.box4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: rgba(255, 255, 0, 0.5); /* Yellow overlay */
+}
+
+.nav:hover::before {
+  background-color: transparent;
+  color: #000;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .nav-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    overflow-x: hidden; /* Hide horizontal scrollbar on small screens */
+  }
+  .nav{
+    height: 100px;
+    width: 100%;
+  }
+}
+
+.yellow-line {
+  border-top: 2px solid blue;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.nav a {
+  color: white !important;
+  text-decoration: none !important;
+  z-index: 5;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
